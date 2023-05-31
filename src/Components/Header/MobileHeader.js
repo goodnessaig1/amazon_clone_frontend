@@ -3,14 +3,16 @@ import {
     NavigateNext,
     SearchRounded,
 } from "@mui/icons-material";
-import React from "react";
+import React, { useState } from "react";
 import { TbMenu2 } from "react-icons/tb";
 import { FaRegUser } from "react-icons/fa";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import MobileSidebar from "./MobileSidebar";
 
 const MobileHeader = () => {
+    const [showSidebar, setShowSidebar] = useState(false);
     const CustomButton = ({ onClick }) => (
         <button onClick={onClick} style={{ display: "none" }}></button>
     );
@@ -35,9 +37,17 @@ const MobileHeader = () => {
             <div className="mobile_header_container_">
                 <div className="mobile_header_top">
                     <div>
-                        <div>
+                        <div onClick={() => setShowSidebar(true)}>
                             <TbMenu2 size={27} />
                         </div>
+                        {showSidebar && (
+                            <div>
+                                <MobileSidebar
+                                    setShowSidebar={setShowSidebar}
+                                    show={showSidebar}
+                                />
+                            </div>
+                        )}
                         <div className="header_icon"></div>
                     </div>
                     <div>

@@ -6,7 +6,6 @@ import {
     LocationOnOutlined,
     SearchRounded,
 } from "@mui/icons-material";
-import { US } from "country-flag-icons/react/3x2";
 import SignInModal from "./SignInModal";
 
 const Header = () => {
@@ -69,7 +68,11 @@ const Header = () => {
             </div>
             <div className="header_right">
                 <div className="language_">
-                    <US title="United States" className="..." />
+                    <img
+                        className="us_flag"
+                        src="https://ik.imagekit.io/nz8zngrxv/amazon-image/us_flag1_gkaDhDtTh.png?updatedAt=1685497308987"
+                        alt=""
+                    />
                     <span className="language__">
                         EN <ArrowDropDown />
                     </span>
