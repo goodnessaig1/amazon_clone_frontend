@@ -1,10 +1,14 @@
 import "./App.css";
+import { Switch, Route } from "react-router-dom";
+import Dashboard from "./Components/Dashboard/Dashboard";
 
 function App() {
     return (
-        <div className="App">
-            <h1>My amazon clone website</h1>
-        </div>
+        <>
+            <Switch>
+                <Route path="/" exact component={Dashboard} />
+            </Switch>
+        </>
     );
 }
 
