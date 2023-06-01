@@ -10,6 +10,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import MobileSidebar from "./MobileSidebar";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 const MobileHeader = () => {
     const [showSidebar, setShowSidebar] = useState(false);
@@ -51,16 +52,18 @@ const MobileHeader = () => {
                         <div className="header_icon"></div>
                     </div>
                     <div>
-                        <span>
-                            Sign in{" "}
-                            <NavigateNext
-                                style={{
-                                    fontSize: "15px",
-                                    margin: "5px  5px 0 0",
-                                }}
-                            />
-                            <FaRegUser size={22} />
-                        </span>
+                        <Link to="/sign_in" className="sign__in_link">
+                            <span>
+                                Sign in{" "}
+                                <NavigateNext
+                                    style={{
+                                        fontSize: "15px",
+                                        margin: "5px  5px 0 0",
+                                    }}
+                                />
+                            </span>
+                            <FaRegUser size={20} />
+                        </Link>
                         <div className="mobile_cart">
                             <span>0</span>
                         </div>

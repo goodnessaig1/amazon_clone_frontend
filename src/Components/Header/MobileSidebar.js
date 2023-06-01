@@ -3,6 +3,7 @@ import { useState } from "react";
 import { FaRegUser } from "react-icons/fa";
 import { BiHomeAlt } from "react-icons/bi";
 import { AnimatePresence, motion } from "framer-motion";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 const MobileSidebar = ({ show, setShowSidebar }) => {
     const [activeMenu, setActiveMenu] = useState(null);
@@ -21,14 +22,19 @@ const MobileSidebar = ({ show, setShowSidebar }) => {
                     animate={{ x: 0 }}
                     exit={{ x: "-100%" }}
                     transition={{ duration: 0.5 }}
-                    className="sidebar-modal show"
+                    className="sidebar__modal show"
                 >
                     <div className="menu">
                         <div className="mobile_sidebar_top">
                             <div className="mobile_sign_in_right">
                                 <div></div>
                                 <div>
-                                    <span>Sign in</span>
+                                    <Link
+                                        to="/sign_in"
+                                        className="sign__in_link"
+                                    >
+                                        Sign in
+                                    </Link>
                                     <FaRegUser size={20} />
                                     <Close
                                         onClick={toggleSideBar}
