@@ -1,19 +1,32 @@
+/* eslint-disable react/no-unescaped-entities */
+import { KeyboardArrowRight } from "@mui/icons-material";
 import React from "react";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
-const SignInModal = () => {
+const SignInModal = ({ user }) => {
     return (
         <div className="sign_in_modal">
             <div className="sign_in_top">
-                <Link to="/sign_in" className="sign_in_link">
-                    Sign in
-                </Link>
-                <div>
-                    New customer?{" "}
-                    <Link to="/sign_up" className="sign_up_link">
-                        Start here.
-                    </Link>
-                </div>
+                {user?.authenticated ? (
+                    <div className="authenticated_user">
+                        <span>Who's Shopping? Selec a Profile</span>
+                        <span>
+                            Manage Profiles <KeyboardArrowRight />
+                        </span>
+                    </div>
+                ) : (
+                    <>
+                        <Link to="/sign_in" className="sign_in_link">
+                            Sign in
+                        </Link>
+                        <div>
+                            New customer?{" "}
+                            <Link to="/sign_up" className="sign_up_link">
+                                Start here.
+                            </Link>
+                        </div>
+                    </>
+                )}
             </div>
             <div className="sign_in_items">
                 <div className="sign_in__items">
