@@ -1,0 +1,30 @@
+.home_holder {
+    background-color: #ebebeb;
+}
+.index-module_Wrapper__ZIVLd *:not(.index-module_Container__mtjRh),
+.index-module_Container__mtjRh * {
+    position: absolute;
+    pointer-events: auto;
+    top: 6rem;
+    margin-left: -15px;
+}
+:focus {
+    outline: none;
+}
+.mobile_slides {
+    display: none;
+}
+
+@media screen and (max-width: 780px) {
+    .mobile_slides {
+        display: block;
+    }
+    .mobile_slides img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+    .siders {
+        display: none;
+    }
+}
