@@ -175,6 +175,7 @@ select {
 
 .user_sign_in > h4,
 .returns_orders > h4 {
+    white-space: nowrap;
     font-size: 12px;
 }
 
@@ -241,6 +242,24 @@ select {
     margin-bottom: 20px;
     padding-bottom: 11px;
     justify-content: center;
+}
+
+.authenticated_user {
+    display: flex;
+    background-color: #e7f4f5;
+    margin: 20px 20px;
+
+    width: 90%;
+    height: 42px;
+    border-radius: 14px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+.authenticated_user > span {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .sign_in_link {
@@ -475,8 +494,9 @@ select:focus {
 
 .close_mobile_sidebar {
     z-index: 600;
-    position: absolute;
-    margin-left: 6.5rem;
+    position: fixed;
+    display: flex;
+    margin-left: 21.1rem;
     border-radius: 0 8px 8px 0;
     font-size: 37px !important;
 }

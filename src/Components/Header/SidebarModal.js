@@ -1,23 +1,26 @@
 import { AccountCircle, Close, Language } from "@mui/icons-material";
 import React from "react";
 
-const SidebarModal = ({ show, setShowSidebar }) => {
+const SidebarModal = ({ show, setShowSidebar, user }) => {
     const sidebarClass = show ? "sidebar-modal show" : "sidebar-modal";
-
+    const sentence = user?.userAuth?.firstLastName;
+    const firstName = sentence?.split(" ")[0];
     return (
         <>
             <div className={sidebarClass}>
                 <div>
                     <div className="side_bar_top">
                         <AccountCircle />
-                        <h4>Hello, sign in</h4>
+                        {user?.authenticated ? (
+                            <h4>Hello, {firstName}</h4>
+                        ) : (
+                            <h4>Hello, sign in</h4>
+                        )}
                     </div>
-                    {/* <div className="close_side_bar"> */}
                     <Close
                         className="close_side_bar"
                         onClick={() => setShowSidebar(false)}
                     />
-                    {/* </div> */}
                 </div>
                 <div className="side_bar_content">
                     <h3>Digital Content & Devices</h3>
