@@ -5,7 +5,7 @@ import { BiHomeAlt } from "react-icons/bi";
 import { AnimatePresence, motion } from "framer-motion";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
-const MobileSidebar = ({ show, setShowSidebar }) => {
+const MobileSidebar = ({ show, setShowSidebar, user }) => {
     const [activeMenu, setActiveMenu] = useState(null);
 
     const toggleSubMenu = (menu) => {
@@ -14,6 +14,9 @@ const MobileSidebar = ({ show, setShowSidebar }) => {
     const toggleSideBar = () => {
         setShowSidebar(!show);
     };
+    const sentence = user?.userAuth?.firstLastName;
+    const firstName = sentence.split(" ")[0];
+
     return (
         <>
             <AnimatePresence>
@@ -29,18 +32,22 @@ const MobileSidebar = ({ show, setShowSidebar }) => {
                             <div className="mobile_sign_in_right">
                                 <div></div>
                                 <div>
-                                    <Link
-                                        to="/sign_in"
-                                        className="sign__in_link"
-                                    >
-                                        Sign in
-                                    </Link>
+                                    {user?.authenticated ? (
+                                        <span>{firstName}</span>
+                                    ) : (
+                                        <Link
+                                            to="/sign_in"
+                                            className="sign__in_link"
+                                        >
+                                            Sign in
+                                        </Link>
+                                    )}
                                     <FaRegUser size={20} />
-                                    <Close
-                                        onClick={toggleSideBar}
-                                        className="close_mobile_sidebar"
-                                    />
                                 </div>
+                                <Close
+                                    onClick={toggleSideBar}
+                                    className="close_mobile_sidebar"
+                                />
                             </div>
                             <div className="browse_amazon">
                                 <div>Browse</div>

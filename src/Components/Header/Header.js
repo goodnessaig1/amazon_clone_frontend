@@ -7,11 +7,16 @@ import {
     SearchRounded,
 } from "@mui/icons-material";
 import SignInModal from "./SignInModal";
+import { getUserAuth } from "../../Auth/Actions/userActions";
+import { connect, useDispatch } from "react-redux";
 
-const Header = () => {
+const Header = ({ user }) => {
+    const dispatch = useDispatch();
     const [optionWidth, setOptionWidth] = useState("50px");
     const [selectedOption, setSelectedOption] = useState("");
-
+    useEffect(() => {
+        dispatch(getUserAuth());
+    }, []);
     const handleOptionChange = (event) => {
         setSelectedOption(event.target.value);
         if (event.target.value != "All") {
@@ -20,6 +25,8 @@ const Header = () => {
             setOptionWidth("50px");
         }
     };
+    const sentence = user?.userAuth?.firstLastName;
+    const firstName = sentence?.split(" ")[0];
 
     return (
         <div className="header_container">
@@ -78,10 +85,14 @@ const Header = () => {
                     </span>
                 </div>
                 <div className="user_sign_in">
-                    <span>Hello, sign in</span>
+                    {user?.authenticated ? (
+                        <span>Hello, {firstName}</span>
+                    ) : (
+                        <span>Hello, sign in</span>
+                    )}
                     <h4>Account & Lists</h4>
                     <div className="sign_in_user">
-                        <SignInModal />
+                        <SignInModal user={user} />
                     </div>
                 </div>
                 <div className="returns_orders">
@@ -97,4 +108,10 @@ const Header = () => {
     );
 };
 
-export default Header;
+const mapStateToProps = (state) => {
+    return {
+        user: state.user?.userData,
+    };
+};
+
+export default connect(mapStateToProps)(Header);

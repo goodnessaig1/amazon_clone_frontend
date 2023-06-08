@@ -11,8 +11,9 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import MobileSidebar from "./MobileSidebar";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import { connect } from "react-redux";
 
-const MobileHeader = () => {
+const MobileHeader = ({ user }) => {
     const [showSidebar, setShowSidebar] = useState(false);
     const CustomButton = ({ onClick }) => (
         <button onClick={onClick} style={{ display: "none" }}></button>
@@ -33,6 +34,9 @@ const MobileHeader = () => {
             );
         },
     };
+    const sentence = user?.userAuth?.firstLastName;
+    const firstName = sentence?.split(" ")[0];
+
     return (
         <div className="mobile_header_container">
             <div className="mobile_header_container_">
@@ -44,6 +48,7 @@ const MobileHeader = () => {
                         {showSidebar && (
                             <div>
                                 <MobileSidebar
+                                    user={user}
                                     setShowSidebar={setShowSidebar}
                                     show={showSidebar}
                                 />
@@ -52,18 +57,33 @@ const MobileHeader = () => {
                         <div className="header_icon"></div>
                     </div>
                     <div>
-                        <Link to="/sign_in" className="sign__in_link">
-                            <span>
-                                Sign in{" "}
-                                <NavigateNext
-                                    style={{
-                                        fontSize: "15px",
-                                        margin: "5px  5px 0 0",
-                                    }}
-                                />
-                            </span>
-                            <FaRegUser size={20} />
-                        </Link>
+                        {user?.authenticated ? (
+                            <Link to="/user_profile" className="sign__in_link">
+                                <span>
+                                    {firstName}
+                                    <NavigateNext
+                                        style={{
+                                            fontSize: "15px",
+                                            margin: "5px  5px 0 0",
+                                        }}
+                                    />
+                                </span>
+                                <FaRegUser size={20} />
+                            </Link>
+                        ) : (
+                            <Link to="/sign_in" className="sign__in_link">
+                                <span>
+                                    Sign in{" "}
+                                    <NavigateNext
+                                        style={{
+                                            fontSize: "15px",
+                                            margin: "5px  5px 0 0",
+                                        }}
+                                    />
+                                </span>
+                                <FaRegUser size={20} />
+                            </Link>
+                        )}
                         <div className="mobile_cart">
                             <span>0</span>
                         </div>
@@ -106,4 +126,10 @@ const MobileHeader = () => {
     );
 };
 
-export default MobileHeader;
+const mapStateToProps = (state) => {
+    return {
+        user: state.user?.userData,
+    };
+};
+
+export default connect(mapStateToProps)(MobileHeader);
