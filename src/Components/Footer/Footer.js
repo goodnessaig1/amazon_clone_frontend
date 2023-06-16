@@ -4,7 +4,8 @@ import "./Footer.css";
 import FooterMid from "./MidFooter";
 import FooterBottom from "./footerBottom";
 import MobileFooter from "./MobileFooter";
-const Footer = () => {
+import { connect } from "react-redux";
+const Footer = ({ user }) => {
     const scrollToTop = () => {
         window.scrollTo({
             top: 0,
@@ -14,7 +15,7 @@ const Footer = () => {
     return (
         <div>
             <div className="footer__container">
-                <SignInFooter />
+                {!user?.authenticated && <SignInFooter />}
                 <div className="back_to_top">
                     <span onClick={scrollToTop}>Back to top</span>
                 </div>
@@ -28,4 +29,10 @@ const Footer = () => {
     );
 };
 
-export default Footer;
+const mapStateToProps = (state) => {
+    return {
+        user: state.user?.userData,
+    };
+};
+
+export default connect(mapStateToProps)(Footer);
