@@ -25,8 +25,7 @@ const Header = ({ user }) => {
             setOptionWidth("50px");
         }
     };
-    const sentence = user?.userAuth?.firstLastName;
-    const firstName = sentence?.split(" ")[0];
+    const firstName = user?.userAuth?.firstLastName;
 
     return (
         <div className="header_container">
@@ -86,7 +85,7 @@ const Header = ({ user }) => {
                 </div>
                 <div className="user_sign_in">
                     {user?.authenticated ? (
-                        <span>Hello, {firstName}</span>
+                        <span>Hello, {firstName?.split(" ")[0]}</span>
                     ) : (
                         <span>Hello, sign in</span>
                     )}

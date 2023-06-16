@@ -1,0 +1,302 @@
+.sign_in__footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.3rem;
+    font-size: 13px;
+    height: 100px;
+}
+.sign_in_footer {
+    border-top: 1px solid #e5dcdc;
+    margin: 20px 0;
+    border-bottom: 1px solid #e5dcdc;
+}
+
+.footer_sign_in {
+    width: 16%;
+    font-weight: 500;
+    border-radius: 8px;
+    color: black;
+    background-color: rgb(255, 194, 80);
+    height: 30px;
+    align-items: center;
+    display: flex;
+    text-shadow: 0 1px 0 #ffe093;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.footer_sign_in:hover {
+    background-color: #febd69;
+    transition: 0.5s ease-in-out;
+}
+
+.back_to_top {
+    width: 100%;
+    height: 40px;
+    background-color: #37475a;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    color: #fff;
+    font-size: 12px;
+}
+
+.back_to_top > span {
+    padding: 12px 30px;
+    cursor: pointer;
+}
+
+.mid__container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #232f3e;
+}
+
+.mid_container {
+    display: flex;
+    flex-direction: row;
+    padding: 120px;
+    justify-content: space-evenly;
+}
+
+.mid_container > div {
+    display: flex;
+    flex-direction: column;
+    color: #ddd;
+    line-height: 25px;
+}
+.mid_container span {
+    font-size: 14px;
+}
+.mid_container span:hover {
+    text-decoration: underline;
+    transition: 0.4s ease-in-out;
+    cursor: pointer;
+}
+.hr__ {
+    height: 0.3px;
+    border: none;
+    background-color: rgb(147, 145, 145);
+}
+
+.mid_container > div > h4 {
+    font-size: 16px;
+    color: #fff;
+}
+
+.logo_bottom {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 110px;
+    gap: 3rem;
+    width: 100%;
+}
+
+.footer_logo {
+    background: url("https://ik.imagekit.io/nz8zngrxv/amazon-image/sprite_350x_4yhtJTGOl.png?updatedAt=1650590663899")
+        no-repeat -9px -89px;
+    width: 78px;
+    margin-top: 7px;
+    height: 25px;
+}
+
+.footer_others {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    color: #fff;
+    font-size: 12px;
+}
+
+.footer_others > span {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    padding: 8px;
+    border: 1px solid white;
+}
+
+.language_icon {
+    font-size: 14px !important;
+}
+
+.footer_bottom {
+    width: 100%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 14px;
+    padding: 60px 25px 60px 25px;
+    background-color: #131a22;
+}
+
+.footer__bottom_ {
+    padding-top: 50px;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    line-height: 22px;
+}
+.footer__bottom_ > div {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+.footer__bottom_ > div > span {
+    font-size: 11px;
+}
+.footer__bottom_ > div {
+    font-size: 10px;
+}
+
+.footer_bottom_items {
+    display: grid;
+    row-gap: 30px;
+    column-gap: 50px;
+    width: 75%;
+    grid-template-columns: repeat(7, 1fr);
+}
+.footer_bottom_items h6 {
+    font-size: 12px;
+    color: #dddddd;
+}
+
+.footer_bottom_items span {
+    font-size: 12px;
+    color: #999999;
+}
+.footer_bottom_items span:hover {
+    text-decoration: underline;
+    transition: 0.4s ease-in-out;
+    cursor: pointer;
+}
+.mobile_footer {
+    display: none;
+}
+@media screen and (max-width: 1000px) {
+    .footer_bottom_items {
+        row-gap: 20px;
+        column-gap: 30px;
+        width: 95%;
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .mid__container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        background-color: #232f3e;
+    }
+
+    .mid_container {
+        padding: 120px 60px;
+    }
+
+    .mid_container span {
+        font-size: 12px;
+    }
+}
+@media screen and (max-width: 780px) {
+    .footer__container {
+        display: none;
+    }
+    .mobile_footer {
+        display: flex;
+    }
+    .mobile_footer_container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .back__to_top {
+        width: 100%;
+        height: 50px;
+        background-color: #37475a;
+        justify-content: center;
+        display: flex;
+        line-height: 8px;
+        color: #fff;
+        font-size: 12px;
+    }
+    .back__to_top span {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .mobile_footer_mid {
+        width: 100%;
+        padding: 80px 50px;
+        background-color: #232f3e;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #f3f3f3;
+    }
+
+    .footer_mid_items {
+        display: flex;
+        flex-direction: row;
+        width: 80%;
+        justify-content: center;
+        gap: 3.5rem;
+    }
+    .footer_mid_items div {
+        display: flex;
+
+        gap: 0.9em;
+        padding: 0 20px;
+        flex-direction: column;
+    }
+
+    .mobile_footer_bottom {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 0 30px 0;
+        gap: 1.3rem;
+        color: #fffdfd;
+        background-color: #131a22;
+    }
+    .footer__others {
+        color: #c5c4c4;
+        display: flex;
+        flex-direction: row;
+        gap: 3rem;
+    }
+    .mobile_footer_bottom a {
+        color: #fffdfd;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    .mobile_footer_bottom a:hover {
+        color: #febd69;
+        text-decoration: underline;
+        transition: 0.4s ease-in-out;
+    }
+    .terms__conditions {
+        display: flex;
+        font-size: 11px;
+        color: #c5c4c4;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.6rem;
+    }
+    .terms__conditions > div {
+        display: flex;
+        flex-direction: row;
+        gap: 1.5em;
+    }
+}

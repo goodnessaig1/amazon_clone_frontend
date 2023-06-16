@@ -34,8 +34,7 @@ const MobileHeader = ({ user }) => {
             );
         },
     };
-    const sentence = user?.userAuth?.firstLastName;
-    const firstName = sentence?.split(" ")[0];
+    const firstName = user?.userAuth?.firstLastName;
 
     return (
         <div className="mobile_header_container">
@@ -60,7 +59,7 @@ const MobileHeader = ({ user }) => {
                         {user?.authenticated ? (
                             <Link to="/user_profile" className="sign__in_link">
                                 <span>
-                                    {firstName}
+                                    {firstName?.split(" ")[0]}
                                     <NavigateNext
                                         style={{
                                             fontSize: "15px",
