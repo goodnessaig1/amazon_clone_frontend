@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../Components/Header/Header";
 import MobileHeader from "../Components/Header/MobileHeader";
 import MidHeader from "../Components/Header/MidHeader";
+import Footer from "../Components/Footer/Footer";
 const PageLayout = ({ children }) => {
     return (
         <div style={{ display: "flex", flexDirection: "column" }}>
@@ -15,7 +16,9 @@ const PageLayout = ({ children }) => {
                 </div>
             </div>
             <div>{children}</div>
-            <div>Footer</div>
+            <div>
+                <Footer />
+            </div>
         </div>
     );
 };

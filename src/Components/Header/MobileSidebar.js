@@ -14,8 +14,7 @@ const MobileSidebar = ({ show, setShowSidebar, user }) => {
     const toggleSideBar = () => {
         setShowSidebar(!show);
     };
-    const sentence = user?.userAuth?.firstLastName;
-    const firstName = sentence.split(" ")[0];
+    const firstName = user?.userAuth?.firstLastName;
 
     return (
         <>
@@ -33,7 +32,7 @@ const MobileSidebar = ({ show, setShowSidebar, user }) => {
                                 <div></div>
                                 <div>
                                     {user?.authenticated ? (
-                                        <span>{firstName}</span>
+                                        <span>{firstName.split(" ")[0]}</span>
                                     ) : (
                                         <Link
                                             to="/sign_in"

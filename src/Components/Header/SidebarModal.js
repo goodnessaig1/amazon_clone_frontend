@@ -3,8 +3,7 @@ import React from "react";
 
 const SidebarModal = ({ show, setShowSidebar, user }) => {
     const sidebarClass = show ? "sidebar-modal show" : "sidebar-modal";
-    const sentence = user?.userAuth?.firstLastName;
-    const firstName = sentence?.split(" ")[0];
+    const firstName = user?.userAuth?.firstLastName;
     return (
         <>
             <div className={sidebarClass}>
@@ -12,7 +11,7 @@ const SidebarModal = ({ show, setShowSidebar, user }) => {
                     <div className="side_bar_top">
                         <AccountCircle />
                         {user?.authenticated ? (
-                            <h4>Hello, {firstName}</h4>
+                            <h4>Hello, {firstName?.split(" ")[0]}</h4>
                         ) : (
                             <h4>Hello, sign in</h4>
                         )}
