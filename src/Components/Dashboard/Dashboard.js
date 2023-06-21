@@ -5,7 +5,7 @@ import "./Dashboard.css";
 const Dashboard = () => {
     return (
         <PageLayout>
-            <div>
+            <div className="home_holder">
                 <Home />
             </div>
         </PageLayout>
