@@ -1,7 +1,6 @@
 import HeroSlider, { Slide } from "hero-slider";
 import React from "react";
-import { Link } from "react-router-dom/cjs/react-router-dom";
-// import Products from "./Products";
+import Products from "./Products";
 
 const first =
     "https://ik.imagekit.io/nz8zngrxv/amazon-image/amazon_refresh_FHAfvtQfr.jpg?updatedAt=1685116274062";
@@ -154,7 +153,7 @@ const Home = () => {
                     </HeroSlider>
                 </div>
             </div>
-            {/* <Products /> */}
+            <Products />
         </div>
     );
 };
