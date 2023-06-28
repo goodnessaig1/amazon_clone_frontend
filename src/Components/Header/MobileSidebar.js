@@ -1,7 +1,7 @@
 import { Close, KeyboardArrowDown, KeyboardArrowUp } from "@mui/icons-material";
 import { useState } from "react";
 import { FaRegUser } from "react-icons/fa";
-import { BiHomeAlt } from "react-icons/bi";
+import { BiHomeAlt, BiLogOutCircle } from "react-icons/bi";
 import { AnimatePresence, motion } from "framer-motion";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
@@ -14,7 +14,6 @@ const MobileSidebar = ({ show, setShowSidebar, user }) => {
     const toggleSideBar = () => {
         setShowSidebar(!show);
     };
-    const firstName = user?.userAuth?.firstLastName;
 
     return (
         <>
@@ -32,7 +31,12 @@ const MobileSidebar = ({ show, setShowSidebar, user }) => {
                                 <div></div>
                                 <div>
                                     {user?.authenticated ? (
-                                        <span>{firstName.split(" ")[0]}</span>
+                                        <Link
+                                            to="/user/account"
+                                            className="authenticated_user_route"
+                                        >
+                                            Your Account
+                                        </Link>
                                     ) : (
                                         <Link
                                             to="/sign_in"
@@ -92,6 +96,10 @@ const MobileSidebar = ({ show, setShowSidebar, user }) => {
                                     </span>
                                 </>
                             )}
+                            <Link className="sign_out_route" to="/sign_in">
+                                <BiLogOutCircle />
+                                <span>Sign Out</span>
+                            </Link>
                         </div>
                     </div>
                 </motion.div>

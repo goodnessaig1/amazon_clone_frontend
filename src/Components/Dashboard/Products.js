@@ -57,7 +57,7 @@ const Products = ({ user }) => {
                     ) : (
                         <div>
                             <span>Sign in for the best experience</span>
-                            <Link to="/sign_in" className="sign_in_link">
+                            <Link to="/sign_in" className="sign_in__link">
                                 Sign in securely
                             </Link>
                         </div>

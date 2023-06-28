@@ -1,12 +1,25 @@
 import "./App.css";
 import { Switch, Route } from "react-router-dom";
+import AdminRoute from "./Auth/AdminRoute";
 import Dashboard from "./Components/Dashboard/Dashboard";
 import Register from "./Components/Register_Login/SignUp/SignUp";
 import SignIn from "./Components/Register_Login/SignIn/SignIn";
 import SignUpSuccess from "./Components/Register_Login/SignUp/SignUpSuccess";
 import NoPage from "./HOC/NoPage";
+import addProduct from "./Components/Admin/addProduct";
+import addBrand from "./Components/Admin/addBrand";
+import addCategory from "./Components/Admin/addCategory";
+import UserAccount from "./Components/Users/User/UserAccount";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { getUserAuth } from "./Auth/Actions/userActions";
 
 function App() {
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(getUserAuth());
+    }, []);
+
     return (
         <>
             <Switch>
@@ -18,6 +31,23 @@ function App() {
                     exact
                     component={SignUpSuccess}
                 />
+                <AdminRoute
+                    path="/user/admin/add_product"
+                    exact
+                    component={addProduct}
+                />
+                <Route path="/user/account" exact component={UserAccount} />
+                <AdminRoute
+                    path="/user/admin/add_category"
+                    exact
+                    component={addCategory}
+                />
+                <AdminRoute
+                    path="/user/admin/add_brand"
+                    exact
+                    component={addBrand}
+                />
+
                 <Route path="*" exact component={NoPage} />
             </Switch>
         </>

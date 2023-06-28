@@ -6,7 +6,6 @@ const Popular = () => {
     const settings = {
         className: "center",
         infinite: true,
-        // centerPadding: "60px",
         slidesToShow: 7,
         swipeToSlide: true,
         afterChange: function (index) {
