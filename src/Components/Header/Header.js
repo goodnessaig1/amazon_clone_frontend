@@ -30,7 +30,9 @@ const Header = ({ user }) => {
     return (
         <div className="header_container">
             <div className="header_left_container">
-                <div className="header_icon" />
+                <div className="header_icon">
+                    <div></div>
+                </div>
                 <div className="location_container">
                     <span>Deliver to</span>
                     <div className="location__container">

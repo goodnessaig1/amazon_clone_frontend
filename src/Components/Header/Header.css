@@ -20,14 +20,23 @@
     flex: 0.13;
     flex-direction: row;
 }
-
 .header_icon {
+    padding: 5px 7px;
+    border: 1px solid transparent;
+}
+.header_icon:hover {
+    cursor: pointer;
+    border: 1px solid #fff;
+    transition: 0.3s ease-in-out;
+}
+.header_icon div {
     background: url("https://ik.imagekit.io/nz8zngrxv/amazon-image/sprite_350x_4yhtJTGOl.png?updatedAt=1650590663899")
         no-repeat -9px -50px;
     width: 98px;
     cursor: pointer;
     height: 31px;
 }
+
 .location_container {
     display: flex;
     align-items: center;
@@ -39,6 +48,7 @@
     width: 80px;
     cursor: pointer;
 }
+
 .location_container:hover {
     border: 1px solid white;
     transition: 0.5s ease-in-out;
@@ -243,12 +253,11 @@ select {
     padding-bottom: 11px;
     justify-content: center;
 }
-
 .authenticated_user {
     display: flex;
     background-color: #e7f4f5;
     margin: 20px 20px;
-
+    text-decoration: none;
     width: 90%;
     height: 42px;
     border-radius: 14px;
@@ -260,6 +269,10 @@ select {
     display: flex;
     flex-direction: row;
     align-items: center;
+}
+.authenticated_user:hover {
+    background-color: #dfeff0;
+    color: rgb(57, 55, 55);
 }
 
 .sign_in_link {
@@ -278,6 +291,7 @@ select {
 
 .sign_in_link:hover {
     background-color: #ffad43;
+
     transition: 0.5s ease-in-out;
 }
 
@@ -655,6 +669,22 @@ select:focus {
     }
     .mobile_location_icon {
         font-size: 14px !important;
+    }
+    .authenticated_user_route {
+        color: #fff;
+        text-decoration: none;
+    }
+    .authenticated_user_route:hover {
+        color: rgb(255, 190, 70);
+    }
+    .sign_out_route {
+        display: flex;
+        flex-direction: row;
+        gap: 0.4rem;
+        align-items: center;
+        padding-top: 20px;
+        color: #0f1111;
+        text-decoration: none;
     }
 }
 

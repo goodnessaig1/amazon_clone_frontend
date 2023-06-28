@@ -8,12 +8,12 @@ const SignInModal = ({ user }) => {
         <div className="sign_in_modal">
             <div className="sign_in_top">
                 {user?.authenticated ? (
-                    <div className="authenticated_user">
-                        <span>Who's Shopping? Selec a Profile</span>
+                    <Link to="/user/account" className="authenticated_user">
+                        <span>Who's Shopping? Select a Profile</span>
                         <span>
                             Manage Profiles <KeyboardArrowRight />
                         </span>
-                    </div>
+                    </Link>
                 ) : (
                     <>
                         <Link to="/sign_in" className="sign_in_link">
