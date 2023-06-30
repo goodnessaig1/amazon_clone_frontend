@@ -1,7 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from "react";
 import { RiStarFill, RiStarHalfLine, RiStarHalfSFill } from "react-icons/ri";
-import { useHistory } from "react-router-dom";
 
 const ProductsResults = ({ products }) => {
     return (

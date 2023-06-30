@@ -155,10 +155,3 @@ export const thirdProducts = [
         loadMore: "See More",
     },
 ];
-[
-    "https://res.cloudinary.com/e-commerce-website/image/upload/v1688031457/t0yqfx58embjn6as1fdh.jpg",
-    "https://res.cloudinary.com/e-commerce-website/image/upload/v1688031460/a2h8ejwcwp7cxshiorsf.jpg",
-    "https://res.cloudinary.com/e-commerce-website/image/upload/v1688031463/mtrlyeak7dmmcbeohnef.jpg",
-    "https://res.cloudinary.com/e-commerce-website/image/upload/v1688031466/dqmeurwc1z7dii2j5jkl.jpg",
-    "https://res.cloudinary.com/e-commerce-website/image/upload/v1688031469/w4huickjokzcws6v0sqn.jpg",
-];

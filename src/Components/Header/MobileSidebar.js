@@ -9,19 +9,7 @@ import { useHistory } from "react-router-dom";
 const MobileSidebar = ({ show, setShowSidebar, user, categories }) => {
     const history = useHistory();
     const [activeMenu, setActiveMenu] = useState(false);
-    useEffect(() => {
-        const body = document.querySelector("body");
 
-        if (activeMenu) {
-            body.style.overflow = "hidden";
-        } else {
-            body.style.overflow = "auto";
-        }
-
-        return () => {
-            body.style.overflow = "auto";
-        };
-    }, [activeMenu]);
     const toggleSubMenu = (menu) => {
         setActiveMenu(activeMenu === menu ? null : menu);
     };
