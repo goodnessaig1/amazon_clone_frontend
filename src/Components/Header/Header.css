@@ -458,12 +458,21 @@ select:focus {
 }
 
 .side_bar_content > span {
-    padding-top: 15px;
+    /* padding-top: 15px; */
     font-size: 13px;
+    padding: 7px;
+    margin-top: 3px;
     display: flex;
     flex-direction: row;
     align-items: center;
+    width: 85%;
     gap: 0.3rem;
+}
+
+.side_bar_content > span:hover {
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    background-color: rgb(246, 246, 246);
 }
 
 .hr_ {
@@ -546,12 +555,12 @@ select:focus {
     flex-direction: column;
     line-height: 44px;
 }
-.mobile_sidebar_item > span {
+/* .mobile_sidebar_item > span {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 0.5rem;
-}
+} */
 
 .dropdown_icon {
     color: gray;
@@ -685,6 +694,16 @@ select:focus {
         padding-top: 20px;
         color: #0f1111;
         text-decoration: none;
+    }
+    .mobile_departments {
+    }
+    .mobile_departments li {
+        list-style: none;
+        margin-left: 4px;
+    }
+    .departments__ {
+        /* max-height: 210px; */
+        overflow: scroll;
     }
 }
 

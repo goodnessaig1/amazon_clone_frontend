@@ -107,6 +107,27 @@ const addBrandFailure = (failure) => {
     };
 };
 
+const getProductByCategoryRequest = (request) => {
+    return {
+        type: types.GET_PRODUCT_BY_CATEGORY_REQUEST,
+        payload: request,
+    };
+};
+
+const getProductByCategorySuccess = (success) => {
+    return {
+        type: types.GET_PRODUCT_BY_CATEGORY_SUCCESS,
+        payload: success,
+    };
+};
+
+const getProductByCategoryFailure = (failure) => {
+    return {
+        type: types.GET_PRODUCT_BY_CATEGORY_FAILURE,
+        payload: failure,
+    };
+};
+
 export function GetCategories() {
     return (dispatch) => {
         const promise = apiRequest("GET", `api/categories`);
@@ -212,6 +233,27 @@ export function AddBrand(data) {
                 const errorMsg = error;
                 console.log(error);
                 dispatch(addBrandFailure(errorMsg));
+            }
+        );
+        return promise;
+    };
+}
+
+export function GetProductByCategory(categoryId) {
+    return (dispatch) => {
+        const promise = apiRequest(
+            "GET",
+            `api/products/product_category${categoryId}`
+        );
+        dispatch(getProductByCategoryRequest());
+        promise.then(
+            function (payload) {
+                const { data } = payload;
+                dispatch(getProductByCategorySuccess(data));
+            },
+            function (error) {
+                const errorMsg = error;
+                dispatch(getProductByCategoryFailure(errorMsg));
             }
         );
         return promise;

@@ -26,6 +26,11 @@ const initialState = {
         error: null,
         success: false,
     },
+    GetProductByCategory: {
+        requesting: false,
+        error: null,
+        success: false,
+    },
 };
 
 //eslint-disable-next-line
@@ -164,6 +169,34 @@ export default function (state = initialState, action) {
         case types.ADD_CATEGORY_FAILURE:
             return Object.assign({}, state, {
                 AddCategory: {
+                    requesting: false,
+                    error: action.payload,
+                    success: false,
+                },
+            });
+
+        case types.GET_PRODUCT_BY_CATEGORY_REQUEST:
+            return Object.assign({}, state, {
+                GetProductByCategory: {
+                    requesting: true,
+                    error: null,
+                    success: false,
+                },
+            });
+
+        case types.GET_PRODUCT_BY_CATEGORY_SUCCESS:
+            return Object.assign({}, state, {
+                GetProductByCategory: {
+                    requesting: false,
+                    error: null,
+                    success: true,
+                },
+                products: action.payload,
+            });
+
+        case types.GET_PRODUCT_BY_CATEGORY_FAILURE:
+            return Object.assign({}, state, {
+                GetProductByCategory: {
                     requesting: false,
                     error: action.payload,
                     success: false,

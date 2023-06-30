@@ -13,11 +13,14 @@ import UserAccount from "./Components/Users/User/UserAccount";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { getUserAuth } from "./Auth/Actions/userActions";
+import ProductsCategory from "./Components/Products/ProductsCategory/ProductsCategory";
+import { GetCategories } from "./Auth/Actions/productActions";
 
 function App() {
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(getUserAuth());
+        dispatch(GetCategories());
     }, []);
 
     return (
@@ -37,6 +40,12 @@ function App() {
                     component={addProduct}
                 />
                 <Route path="/user/account" exact component={UserAccount} />
+                <Route
+                    path="/products/department/:categoryId"
+                    exact
+                    component={ProductsCategory}
+                />
+
                 <AdminRoute
                     path="/user/admin/add_category"
                     exact

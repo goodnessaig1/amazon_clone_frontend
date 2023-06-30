@@ -2,7 +2,10 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+
 const Popular = () => {
+    const history = useHistory();
     const settings = {
         className: "center",
         infinite: true,
@@ -16,10 +19,14 @@ const Popular = () => {
             );
         },
     };
+    const handleClick = () => {
+        const categoryId = "648252d7b7b3dc2d17bda4dc";
+        history.push(`/products/department/${categoryId}`);
+    };
     return (
         <div>
             <div className="product___items">
-                <div className="products__">
+                <div onClick={() => handleClick()} className="products__">
                     <h4>Popular items this season</h4>
                     <Slider {...settings}>
                         <div>
