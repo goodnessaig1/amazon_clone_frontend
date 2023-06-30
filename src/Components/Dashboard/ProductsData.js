@@ -23,7 +23,7 @@ export const firstProducts = [
         loadMore: "See More",
     },
     {
-        id: "64769c411a7de5e2326970f6",
+        id: "648253f1b7b3dc2d17bda4e8",
         title: "Shop deals in Fashion",
         products: [
             {
@@ -46,7 +46,7 @@ export const firstProducts = [
         loadMore: "See More",
     },
     {
-        id: "6471d78c4aaadad6f7976750",
+        id: "6482538fb7b3dc2d17bda4df",
         title: "Electronics",
         products: [
             {
@@ -56,6 +56,7 @@ export const firstProducts = [
         loadMore: "See More",
     },
 ];
+
 export const secondProducts = [
     {
         id: "64825197b7b3dc2d17bda4d6",
@@ -68,7 +69,7 @@ export const secondProducts = [
         loadMore: "See More",
     },
     {
-        id: "64769cd91a7de5e2326970fa",
+        id: "6482514db7b3dc2d17bda4d3",
         title: "Beauty picks",
         products: [
             {
@@ -78,7 +79,7 @@ export const secondProducts = [
         loadMore: "See More",
     },
     {
-        id: "6471d75b4aaadad6f7976744",
+        id: "649b330c069b827eab7b6480",
         title: "Easy updates for elevated spaces",
         products: [
             {
@@ -101,13 +102,63 @@ export const secondProducts = [
         loadMore: "See More",
     },
     {
-        id: "single",
-        title: "Shop activity trackers and smartwatches",
+        id: "64825066b7b3dc2d17bda4cf",
+        title: "Books Everyone Should Read",
         products: [
             {
-                img: "https://ik.imagekit.io/nz8zngrxv/amazon-image/watches_Y7dUkqCpX.jpg?updatedAt=1685380881456",
+                img: "https://res.cloudinary.com/e-commerce-website/image/upload/v1687895377/danbvvrfgxayobxij7ag.jpg",
             },
         ],
         loadMore: "See More",
     },
+];
+
+export const thirdProducts = [
+    {
+        id: "6482514db7b3dc2d17bda4d3",
+        title: "Health & Personal Care",
+        products: [
+            {
+                img: "https://ik.imagekit.io/nz8zngrxv/amazon-image/product2_id1GStDU2.jpg?updatedAt=1685417314909",
+            },
+        ],
+        loadMore: "See More",
+    },
+    {
+        id: "648253f1b7b3dc2d17bda4e8",
+        title: "Spring new arrivals",
+        products: [
+            {
+                img: "https://ik.imagekit.io/nz8zngrxv/amazon-image/product1_DZs5uSBcJB.jpg?updatedAt=1685417315852",
+            },
+        ],
+        loadMore: "See More",
+    },
+    {
+        id: "6499f9c5adcb667025376e53",
+        title: "New arrivals in Toys",
+        products: [
+            {
+                img: "https://ik.imagekit.io/nz8zngrxv/amazon-image/producttoy_paPEFhPLx.jpg?updatedAt=1685417315313",
+            },
+        ],
+        loadMore: "See More",
+    },
+    {
+        id: "64825051b7b3dc2d17bda4cc",
+        title: "Arts & Crafts",
+        products: [
+            {
+                img: "https://res.cloudinary.com/e-commerce-website/image/upload/v1688031457/t0yqfx58embjn6as1fdh.jpg",
+            },
+        ],
+        loadMore: "See More",
+    },
+];
+[
+    "https://res.cloudinary.com/e-commerce-website/image/upload/v1688031457/t0yqfx58embjn6as1fdh.jpg",
+    "https://res.cloudinary.com/e-commerce-website/image/upload/v1688031460/a2h8ejwcwp7cxshiorsf.jpg",
+    "https://res.cloudinary.com/e-commerce-website/image/upload/v1688031463/mtrlyeak7dmmcbeohnef.jpg",
+    "https://res.cloudinary.com/e-commerce-website/image/upload/v1688031466/dqmeurwc1z7dii2j5jkl.jpg",
+    "https://res.cloudinary.com/e-commerce-website/image/upload/v1688031469/w4huickjokzcws6v0sqn.jpg",
 ];

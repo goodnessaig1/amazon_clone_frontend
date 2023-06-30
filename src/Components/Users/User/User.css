@@ -188,3 +188,26 @@
         height: 172px;
     }
 }
+
+@media screen and (max-width: 420px) {
+    .account_detail_container img {
+        width: 40px;
+        height: 40px;
+    }
+    .account_detail {
+        gap: 0.1em;
+        margin: 2px;
+    }
+
+    .account_detail > h5 {
+        font-size: 13px;
+    }
+
+    .account_detail > span {
+        font-size: 11px;
+        line-height: 15px;
+    }
+    .user_account > h4 {
+        font-size: 20px;
+    }
+}

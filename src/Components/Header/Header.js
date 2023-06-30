@@ -9,19 +9,27 @@ import {
 import SignInModal from "./SignInModal";
 import { getUserAuth } from "../../Auth/Actions/userActions";
 import { connect, useDispatch } from "react-redux";
+import { GetCategories } from "../../Auth/Actions/productActions";
+import { useHistory } from "react-router-dom";
 
-const Header = ({ user }) => {
+const Header = ({ user, categories }) => {
     const dispatch = useDispatch();
-    const [optionWidth, setOptionWidth] = useState("50px");
-    const [selectedOption, setSelectedOption] = useState("");
+    const history = useHistory();
     useEffect(() => {
         dispatch(getUserAuth());
+        dispatch(GetCategories());
     }, []);
-    const handleOptionChange = (event) => {
-        setSelectedOption(event.target.value);
-        if (event.target.value != "All") {
+
+    const [optionWidth, setOptionWidth] = useState("50px");
+    const [selectedOption, setSelectedOption] = useState("");
+    const handleOptionChange = (e) => {
+        const categoryId = e.target.value;
+        setSelectedOption(categoryId);
+        if (categoryId != "All") {
+            history.push(`/products/department/${categoryId}`);
             setOptionWidth("135px");
         } else {
+            history.push(`/`);
             setOptionWidth("50px");
         }
     };
@@ -52,17 +60,17 @@ const Header = ({ user }) => {
                         <option className="defaulta" defaultValue="All">
                             All
                         </option>
-                        <option value="options1">Arts & Crafts</option>
-                        <option value="option1">Books</option>
-                        <option value="option2">Boy's Fashion</option>
-                        <option value="option3">Computers</option>
-                        <option value="option4">
-                            Cell Phones and Accessories
-                        </option>
-                        <option value="option5">Girl's Fashion</option>
-                        <option value="option6">Men's Fashion</option>
-                        <option value="option7">Toy's & Games</option>
-                        <option value="option8">Women's Fashion</option>
+                        {categories &&
+                            categories.map((category, index) => (
+                                <option
+                                    key={category?._id}
+                                    value={category?._id}
+                                    onClick={(e) => console.log(category._id)}
+                                    className="category__options options"
+                                >
+                                    {category?.name}
+                                </option>
+                            ))}
                     </select>
                 </div>
                 <input
@@ -112,6 +120,7 @@ const Header = ({ user }) => {
 const mapStateToProps = (state) => {
     return {
         user: state.user?.userData,
+        categories: state.products.categories,
     };
 };
 

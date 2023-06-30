@@ -13,7 +13,7 @@ import MobileSidebar from "./MobileSidebar";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import { connect } from "react-redux";
 
-const MobileHeader = ({ user }) => {
+const MobileHeader = ({ user, categories }) => {
     const [showSidebar, setShowSidebar] = useState(false);
     const CustomButton = ({ onClick }) => (
         <button onClick={onClick} style={{ display: "none" }}></button>
@@ -48,6 +48,7 @@ const MobileHeader = ({ user }) => {
                             <div>
                                 <MobileSidebar
                                     user={user}
+                                    categories={categories}
                                     setShowSidebar={setShowSidebar}
                                     show={showSidebar}
                                 />
@@ -127,6 +128,7 @@ const MobileHeader = ({ user }) => {
 
 const mapStateToProps = (state) => {
     return {
+        categories: state.products.categories,
         user: state.user?.userData,
     };
 };

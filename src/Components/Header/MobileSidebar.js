@@ -1,20 +1,37 @@
 import { Close, KeyboardArrowDown, KeyboardArrowUp } from "@mui/icons-material";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaRegUser } from "react-icons/fa";
 import { BiHomeAlt, BiLogOutCircle } from "react-icons/bi";
 import { AnimatePresence, motion } from "framer-motion";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import { useHistory } from "react-router-dom";
 
-const MobileSidebar = ({ show, setShowSidebar, user }) => {
-    const [activeMenu, setActiveMenu] = useState(null);
+const MobileSidebar = ({ show, setShowSidebar, user, categories }) => {
+    const history = useHistory();
+    const [activeMenu, setActiveMenu] = useState(false);
+    useEffect(() => {
+        const body = document.querySelector("body");
 
+        if (activeMenu) {
+            body.style.overflow = "hidden";
+        } else {
+            body.style.overflow = "auto";
+        }
+
+        return () => {
+            body.style.overflow = "auto";
+        };
+    }, [activeMenu]);
     const toggleSubMenu = (menu) => {
         setActiveMenu(activeMenu === menu ? null : menu);
     };
     const toggleSideBar = () => {
         setShowSidebar(!show);
     };
-
+    const handleCategoryClick = (categoryId) => {
+        setShowSidebar(false);
+        history.push(`/products/department/${categoryId}`);
+    };
     return (
         <>
             <AnimatePresence>
@@ -64,15 +81,39 @@ const MobileSidebar = ({ show, setShowSidebar, user }) => {
                         <hr className="sidebar_hr" />
                         <div className="mobile_sidebar_item">
                             <h3>Trending</h3>
-                            <span>Mobile Phones</span>
+                            <span
+                                onClick={() =>
+                                    handleCategoryClick(
+                                        "648252d7b7b3dc2d17bda4dc"
+                                    )
+                                }
+                            >
+                                Mobile Phones
+                            </span>
                         </div>
                         <hr className="sidebar_hr" />
                         <div className="mobile_sidebar_item">
                             <h3>Top Departments</h3>
-                            <span>Home</span>
-                            <span>Health & Household</span>
-                            <span>Books</span>
-                            <span>PC</span>
+                            <ul className="mobile_departments departments__">
+                                {categories &&
+                                    categories
+                                        .slice(
+                                            0,
+                                            activeMenu ? categories?.length : 4
+                                        )
+                                        .map((item, index) => (
+                                            <li
+                                                onClick={() =>
+                                                    handleCategoryClick(
+                                                        item?._id
+                                                    )
+                                                }
+                                                key={index}
+                                            >
+                                                {item?.name}
+                                            </li>
+                                        ))}
+                            </ul>
                             {!activeMenu && (
                                 <span
                                     onClick={() =>
@@ -84,17 +125,10 @@ const MobileSidebar = ({ show, setShowSidebar, user }) => {
                                 </span>
                             )}
                             {activeMenu === "all_departments" && (
-                                <>
-                                    <span>Clothing & Shoes</span>
-                                    <span>Electronics</span>
-                                    <span>Computers</span>
-                                    <span>Beauty, Health Care</span>
-                                    <span> Our Brands</span>
-                                    <span onClick={() => setActiveMenu(null)}>
-                                        See Less{" "}
-                                        <KeyboardArrowUp className="dropdown_icon" />
-                                    </span>
-                                </>
+                                <span onClick={() => setActiveMenu(false)}>
+                                    See Less{" "}
+                                    <KeyboardArrowUp className="dropdown_icon" />
+                                </span>
                             )}
                             <Link className="sign_out_route" to="/sign_in">
                                 <BiLogOutCircle />
