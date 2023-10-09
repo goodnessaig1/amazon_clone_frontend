@@ -1,5 +1,5 @@
 import { KeyboardArrowRight, LocationOnOutlined } from "@mui/icons-material";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import Modal from "./Modal";
 
@@ -19,6 +19,12 @@ const SingleProductMobile = ({ product, handleGoBack }) => {
         setImg(image);
         setOpenModal(true);
     };
+    useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
+    }, []);
 
     return (
         <div className="singe_product_mobile">
@@ -56,7 +62,6 @@ const SingleProductMobile = ({ product, handleGoBack }) => {
                 <div className="mobile_price">
                     <div>$</div>
                     {product?.price}
-                    <div>00</div>
                 </div>
                 <div className="mobile_detail">
                     <div>

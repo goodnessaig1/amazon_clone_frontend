@@ -207,7 +207,7 @@ const SingleProduct = ({ product, brand, requesting }) => {
                         strokeColor="orange"
                         strokeWidth="5"
                         animationDuration="0.75"
-                        width="96"
+                        width="60"
                         visible={true}
                     />
                 </div>
