@@ -128,6 +128,27 @@ const getProductByCategoryFailure = (failure) => {
     };
 };
 
+const getSingleProductRequest = (request) => {
+    return {
+        type: types.GET_SINGLE_PRODUCT_REQUEST,
+        payload: request,
+    };
+};
+
+const getSingleProductSuccess = (success) => {
+    return {
+        type: types.GET_SINGLE_PRODUCT_SUCCESS,
+        payload: success,
+    };
+};
+
+const getSingleProductFailure = (failure) => {
+    return {
+        type: types.GET_SINGLE_PRODUCT_FAILURE,
+        payload: failure,
+    };
+};
+
 export function GetCategories() {
     return (dispatch) => {
         const promise = apiRequest("GET", `api/categories`);
@@ -254,6 +275,23 @@ export function GetProductByCategory(categoryId) {
             function (error) {
                 const errorMsg = error;
                 dispatch(getProductByCategoryFailure(errorMsg));
+            }
+        );
+        return promise;
+    };
+}
+export function GetSingleProduct(productId) {
+    return (dispatch) => {
+        const promise = apiRequest("GET", `api/products/product/${productId}`);
+        dispatch(getSingleProductRequest());
+        promise.then(
+            function (payload) {
+                const { data } = payload;
+                dispatch(getSingleProductSuccess(data));
+            },
+            function (error) {
+                const errorMsg = error;
+                dispatch(getSingleProductFailure(errorMsg));
             }
         );
         return promise;
