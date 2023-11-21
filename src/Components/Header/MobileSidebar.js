@@ -30,6 +30,7 @@ const MobileSidebar = ({ show, setShowSidebar, user, categories }) => {
                     transition={{ duration: 0.5 }}
                     className="sidebar__modal show"
                 >
+                    <></>
                     <div className="menu">
                         <div className="mobile_sidebar_top">
                             <div className="mobile_sign_in_right">
