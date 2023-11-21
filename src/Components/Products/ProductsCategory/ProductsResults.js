@@ -1,8 +1,15 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from "react";
 import { RiStarFill, RiStarHalfLine, RiStarHalfSFill } from "react-icons/ri";
+import { useHistory } from "react-router-dom";
 
 const ProductsResults = ({ products }) => {
+    const history = useHistory();
+
+    const handleProductClick = (productId) => {
+        history.push(`/product/${productId}`);
+    };
+
     return (
         <div className="department_container">
             <h4>Results</h4>
@@ -12,7 +19,12 @@ const ProductsResults = ({ products }) => {
                         const rating = Math.floor(Math.random() * 5) + 1;
                         return (
                             <div key={index}>
-                                <div className="single_product">
+                                <div
+                                    className="single_product"
+                                    onClick={() =>
+                                        handleProductClick(product._id)
+                                    }
+                                >
                                     <div className="single_product_top product___bg">
                                         <div className="choice_container">
                                             <span>

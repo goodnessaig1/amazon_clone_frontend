@@ -467,6 +467,9 @@
     .post_category_container {
         grid-template-columns: repeat(2, 1fr);
     }
+    .single_product {
+        height: 520px;
+    }
 }
 @media screen and (max-width: 780px) {
     .products_holder {
@@ -506,10 +509,10 @@
 @media screen and (max-width: 560px) {
     .single_product {
         width: 220px;
-        height: 470px;
     }
 
     .product_category_name {
+        font-size: 12.5px;
         line-height: 17px;
     }
 }

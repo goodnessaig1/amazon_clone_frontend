@@ -3,15 +3,17 @@ import React from "react";
 import Products from "./Products";
 
 const first =
-    "https://ik.imagekit.io/nz8zngrxv/amazon-image/amazon_refresh_FHAfvtQfr.jpg?updatedAt=1685116274062";
+    "https://ik.imagekit.io/nz8zngrxv/amazon-image/amazon-img_UcjpS5lOSQ.jpg?updatedAt=1696841380568";
 const second =
     "https://ik.imagekit.io/nz8zngrxv/amazon-image/amazon_computers_zk6bwR4tl.jpg?updatedAt=1685116273906";
 const third =
     "https://ik.imagekit.io/nz8zngrxv/amazon-image/amazon_makeUp_R1yPcYaAQ.jpg?updatedAt=1685116273998";
 const fourth =
-    "https://ik.imagekit.io/nz8zngrxv/amazon-image/amazone_home2_3zXEqwyzf.jpg?updatedAt=1685116273999";
+    "https://ik.imagekit.io/nz8zngrxv/amazon-image/amazon_refresh_FHAfvtQfr.jpg?updatedAt=1685116274062";
+// "https://ik.imagekit.io/nz8zngrxv/amazon-image/amazone_home2_3zXEqwyzf.jpg?updatedAt=1685116273999";
 const fifth =
-    "https://ik.imagekit.io/nz8zngrxv/amazon-image/amazon_toys_wTB_0jQeZ.jpg?updatedAt=1685116273990";
+    "https://ik.imagekit.io/nz8zngrxv/amazon-image/amazon_O8lfQShbl.jpg?updatedAt=1696841394063";
+// "https://ik.imagekit.io/nz8zngrxv/amazon-image/amazon_toys_wTB_0jQeZ.jpg?updatedAt=1685116273990";
 const mobileFirst =
     "https://ik.imagekit.io/nz8zngrxv/amazon-image/mobile_tBXJh3BcKB.jpg?updatedAt=1686037971200";
 const mobileSecond =
