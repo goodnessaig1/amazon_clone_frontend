@@ -11,10 +11,13 @@ import { getUserAuth } from "../../Auth/Actions/userActions";
 import { connect, useDispatch } from "react-redux";
 import { GetCategories } from "../../Auth/Actions/productActions";
 import { useHistory } from "react-router-dom";
+import SearchProduct from "./SearchProduct";
 
 const Header = ({ user, categories }) => {
     const dispatch = useDispatch();
     const history = useHistory();
+    const [searchTerm, setSearchTerm] = useState("");
+    const [searchItem, setSearchItem] = useState("");
     useEffect(() => {
         dispatch(getUserAuth());
         dispatch(GetCategories());
@@ -73,14 +76,12 @@ const Header = ({ user, categories }) => {
                             ))}
                     </select>
                 </div>
-                <input
-                    className="search_input"
-                    type="text"
-                    placeholder="Search Amazon"
+                <SearchProduct
+                    searchTerm={searchTerm}
+                    setSearchTerm={setSearchTerm}
+                    searchItem={searchItem}
+                    setSearchItem={setSearchItem}
                 />
-                <div className="search_icon">
-                    <SearchRounded />
-                </div>
             </div>
             <div className="header_right">
                 <div className="language_">

@@ -46,6 +46,11 @@ function App() {
                     exact
                     component={ProductsCategory}
                 />
+                <Route
+                    path="/products/add_productss"
+                    exact
+                    component={ProductsCategory}
+                />
 
                 <AdminRoute
                     path="/user/admin/add_category"

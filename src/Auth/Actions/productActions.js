@@ -149,6 +149,27 @@ const getSingleProductFailure = (failure) => {
     };
 };
 
+const searchProductRequest = (request) => {
+    return {
+        type: types.SEARCH_PRODUCT_REQUEST,
+        payload: request,
+    };
+};
+
+const searchProductSuccess = (success) => {
+    return {
+        type: types.SEARCH_PRODUCT_SUCCESS,
+        payload: success,
+    };
+};
+
+const searchProductFailure = (failure) => {
+    return {
+        type: types.SEARCH_PRODUCT_FAILURE,
+        payload: failure,
+    };
+};
+
 export function GetCategories() {
     return (dispatch) => {
         const promise = apiRequest("GET", `api/categories`);
@@ -295,5 +316,25 @@ export function GetSingleProduct(productId) {
             }
         );
         return promise;
+    };
+}
+
+export function SearchProductName(name) {
+    return (dispatch) => {
+        const promise = apiRequest(
+            "GET",
+            `api/products/product_search?name=${name}`
+        );
+        dispatch(searchProductRequest());
+        promise.then(
+            function (payload) {
+                const { data } = payload;
+                // console.log(data);
+                dispatch(searchProductSuccess(data));
+            },
+            function (error) {
+                dispatch(searchProductFailure(error));
+            }
+        );
     };
 }
