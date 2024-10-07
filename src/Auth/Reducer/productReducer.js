@@ -31,6 +31,16 @@ const initialState = {
         error: null,
         success: false,
     },
+    GetSingleProduct: {
+        requesting: false,
+        error: null,
+        success: false,
+    },
+    SearchProductName: {
+        requesting: false,
+        error: null,
+        success: false,
+    },
 };
 
 //eslint-disable-next-line
@@ -197,6 +207,61 @@ export default function (state = initialState, action) {
         case types.GET_PRODUCT_BY_CATEGORY_FAILURE:
             return Object.assign({}, state, {
                 GetProductByCategory: {
+                    requesting: false,
+                    error: action.payload,
+                    success: false,
+                },
+            });
+        case types.GET_SINGLE_PRODUCT_REQUEST:
+            return Object.assign({}, state, {
+                GetSingleProduct: {
+                    requesting: true,
+                    error: null,
+                    success: false,
+                },
+            });
+
+        case types.GET_SINGLE_PRODUCT_SUCCESS:
+            return Object.assign({}, state, {
+                GetSingleProduct: {
+                    requesting: false,
+                    error: null,
+                    success: true,
+                },
+                product: action.payload,
+            });
+
+        case types.GET_SINGLE_PRODUCT_FAILURE:
+            return Object.assign({}, state, {
+                GetSingleProduct: {
+                    requesting: false,
+                    error: action.payload,
+                    success: false,
+                },
+            });
+
+        case types.SEARCH_PRODUCT_REQUEST:
+            return Object.assign({}, state, {
+                SearchProductName: {
+                    requesting: true,
+                    error: null,
+                    success: false,
+                },
+            });
+
+        case types.SEARCH_PRODUCT_SUCCESS:
+            return Object.assign({}, state, {
+                SearchProductName: {
+                    requesting: false,
+                    error: null,
+                    success: true,
+                },
+                productResults: action.payload,
+            });
+
+        case types.SEARCH_PRODUCT_FAILURE:
+            return Object.assign({}, state, {
+                SearchProductName: {
                     requesting: false,
                     error: action.payload,
                     success: false,

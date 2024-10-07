@@ -86,7 +86,7 @@ const ProductsCategory = ({ requesting, products, category, brands }) => {
                         strokeColor="orange"
                         strokeWidth="5"
                         animationDuration="0.75"
-                        width="96"
+                        width="66"
                         visible={true}
                     />
                 </div>

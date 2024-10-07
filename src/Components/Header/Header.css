@@ -109,6 +109,111 @@ select {
     font-size: 23px !important;
 }
 
+.search_input_container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.input_form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+
+.search_input {
+    height: 37.5px;
+    border: none !important;
+    z-index: 1500;
+    width: 95%;
+    padding-left: 3px;
+}
+
+.search_icon {
+    text-decoration: none;
+    border: none;
+    width: 45px;
+    height: 37px;
+    color: #0f1111;
+    display: flex;
+    z-index: 1800;
+    align-items: center;
+    border-radius: 0 4px 4px 0;
+    justify-content: center;
+    background-color: #febd69;
+}
+
+.products_search {
+    background-color: #fff;
+    position: absolute;
+    border-radius: 10px;
+    top: 3rem;
+    text-decoration: none;
+    display: flex;
+    max-height: 400px;
+    overflow: auto;
+    width: 49%;
+    padding: 5px 0;
+    flex-direction: column;
+    z-index: 1900;
+}
+
+.products_search li {
+    text-decoration: none;
+    list-style: none;
+    padding: 7px 10px;
+    padding-left: 10px;
+}
+.products_search li:hover {
+    background-color: #e0dfdf;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+.result_search_icon {
+    color: #5f6060;
+    font-size: 19px !important;
+}
+.products_search span {
+    gap: 0.5em;
+    color: #0f1111;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.products_search p {
+    color: #232f3e;
+    padding-left: 30px;
+    font-size: 12px;
+}
+.products_search p:hover {
+    color: #ca870a;
+    transition: 0.4s ease-in-out;
+}
+.close_search {
+    color: #9ca2a2;
+    margin-right: 3px;
+    z-index: 2000;
+    border-radius: 4px;
+}
+.close_search:hover {
+    background-color: #f4f4f4;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+.search_overlay {
+    display: flex;
+    position: fixed;
+    top: 0;
+    justify-content: center;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    z-index: 1000;
+}
+
 .search_input {
     height: 37px;
     border: none;

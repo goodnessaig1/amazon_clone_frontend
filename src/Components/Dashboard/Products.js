@@ -55,7 +55,7 @@ const Products = ({ user }) => {
 
                 <div className="product_top_signin">
                     {user?.authenticated ? (
-                        <div className="free_delivery">
+                        <div className="free_">
                             Get a product from us today and stand a chance of
                             getting free delivery.
                         </div>

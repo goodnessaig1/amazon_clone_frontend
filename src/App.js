@@ -15,6 +15,7 @@ import { useDispatch } from "react-redux";
 import { getUserAuth } from "./Auth/Actions/userActions";
 import ProductsCategory from "./Components/Products/ProductsCategory/ProductsCategory";
 import { GetCategories } from "./Auth/Actions/productActions";
+import SingleProduct from "./Components/Products/SingleProduct/SingleProduct";
 
 function App() {
     const dispatch = useDispatch();
@@ -45,6 +46,11 @@ function App() {
                     exact
                     component={ProductsCategory}
                 />
+                <Route
+                    path="/products/add_productss"
+                    exact
+                    component={ProductsCategory}
+                />
 
                 <AdminRoute
                     path="/user/admin/add_category"
@@ -56,7 +62,11 @@ function App() {
                     exact
                     component={addBrand}
                 />
-
+                <Route
+                    path="/product/:productId"
+                    exact
+                    component={SingleProduct}
+                />
                 <Route path="*" exact component={NoPage} />
             </Switch>
         </>
