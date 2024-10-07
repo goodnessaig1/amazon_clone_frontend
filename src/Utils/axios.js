@@ -1,7 +1,7 @@
 import axios from "axios";
 
-// const baseURL = "https://amazon-clone-nzk1.onrender.com/";
-const baseURL = "http://localhost:3008/";
+const baseURL = "https://amazon-clone-nzk1.onrender.com/";
+// const baseURL = "http://localhost:3008/";
 
 const defaultHeaders = {
     "Content-Type": "application/json",
